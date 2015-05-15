@@ -1,0 +1,17 @@
+/* libcustom.scss */
+
+/* Prism syntax highlighting */
+pre[class*="language-"] {
+    background:rgba(0,0,0,0.85);
+	border-radius: 0;
+	border: 0;
+	box-shadow: none;
+	margin: 2rem 0;
+	overflow: auto;
+	padding: 1.5rem;
+    line-height:auto;
+}
+code[class*="language-"], pre[class*="language-"] {
+	font-size:0.8em;
+    line-height:1.1;
+}

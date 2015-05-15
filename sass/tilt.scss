@@ -1,0 +1,486 @@
+/* tilt.scss */
+/* Tilt UI */
+
+@import 'rules';
+
+// Structural
+//----------------
+html {
+	background:#000 url('../images/bg.jpg') no-repeat center center;
+	@include background-size(cover);
+    background-attachment:fixed;
+}
+body {
+  padding-top:2rem;
+}
+#content-master {
+    position:relative;
+    padding-top:5rem;
+}
+img { 
+    max-width:100%;
+}
+
+// // // // // // //  // //
+// Tilt Shift
+// // // // // // //  // //
+// Rules:
+/*
+    Use with: tilt-bottom
+    Apply #tilt-shift to element
+*/
+
+.tilt-shift {
+    position:relative;
+    height:0;
+    overflow:hidden;
+}
+.tilt-open {
+    height:auto;
+    overflow:visible;
+}
+
+// // // // // // //  // //
+
+// // // // // // //  // //
+// Tilt Bottom
+// // // // // // //  // //
+
+.tilt-bottom {
+    position:fixed;
+    top:0;
+    width:100%;
+    font-size:0.7em;
+    height:50px;
+    display:table;
+    border-bottom:1px solid #f1f1f1;
+    @include transition(all 0.3s ease);
+    z-index:2000;
+    @include opacity(0);
+      a {
+        position:relative;
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        font-weight:400;
+        height:100%;
+        text-decoration:none;
+        border-right:1px solid #f1f1f1;
+        @include transition(all 0.3s ease);
+        &:last-child {border-right:0;}
+        &:hover {
+          color:#333;
+          background-color:rgba(255,255,255,0.92);
+        }
+        &.active {
+          border-bottom:5px solid #f1f1f1;
+        }
+        .subLink {
+          position:absolute;
+          display:inline-block;
+          bottom:2px;
+          right:0;
+          text-align:center;
+          font-size:11px;
+        }
+      }
+    &.fadeIn {
+      @include opacity(1);
+      @include transition(opacity 3s ease);
+    }
+
+}
+.tilt-bottom.scrolled {
+    font-size:0.6rem;
+    background-color:rgba(0,0,0,0.95);
+    padding-top:1rem;
+}
+
+// // // // // // //  // //
+
+
+// Headers
+//----------------
+
+//Page Title
+.title-master {
+	margin-bottom:0.6rem;
+    cursor:pointer;
+}
+
+//Navigation
+
+#head-master {
+	position:relative;
+	
+	.slide {position:absolute; height:auto;}
+	ul {
+        border-top:1px solid $font;
+    }
+	li {
+        display:inline-block;
+        margin-right:3rem;
+        position:relative;
+    }
+    ul.parentmenu {
+		position:relative;
+		height:auto;
+		overflow:visible;
+        padding-top:1rem;
+    }
+    ul.submenu {
+		height:0;
+        border-top:none;
+        padding-top:10px;
+            li {
+                display:block;
+            }
+    }
+    li.parent {
+		cursor:pointer;
+		position:relative;
+    }
+	.content {
+		position:relative;
+		overflow:hidden;
+		z-index:3000;
+    }
+    .subcontent {
+        height:0;
+        overflow:hidden;
+		position:absolute;
+		z-index:4000;
+		top:4.5rem;
+        width:200%;
+			li {
+				background:rgba(0,0,0,0.95);
+				border:1px solid #111;
+                border-top:0;
+				display:block;
+				margin:0 5px;
+				padding:6px 10px;
+				color:#fff;
+				width:auto;
+			}
+            li:first-child {border-top:1px solid #111;}
+			a {
+				font-family:$title-font;
+				font-size:0.65em;
+				font-weight:300;
+				text-align:left;
+				text-transform:uppercase;
+			}
+    }
+    #flapper {
+			position:relative;
+			top:0.8rem;
+			font-size:5rem;
+			@include transition(all .2s ease);
+            overflow:hidden;
+            cursor:pointer;
+        }
+    #flopper {
+		position:relative;
+		top:0.1rem;
+        font-size:2.8rem;
+        padding-left:0;
+        @include transition(all .2s ease);
+        cursor:pointer;
+    }
+}
+#head-master.sticky {position:fixed;} //Make sticky nav
+#nav-master {
+	position:relative;
+	margin-bottom:2rem;
+}
+
+// Heroes
+//----------------
+.hero-master {
+    padding-bottom:10rem;
+	text-align:center;
+		.title {
+		display:inline-block;
+		border-bottom:1px dotted #f3f3f3;
+		margin-bottom:3rem;
+        font-size:6.8rem;
+        line-height:1;
+		}
+        .subtitle {
+          margin-top:-2.1rem;
+          margin-bottom:6rem;
+        }
+		.item {
+			margin-bottom:2rem;
+		}
+        h6 {margin-bottom:1rem;}
+        p {margin-bottom:20px;}    
+}
+ul.tilt-list{
+  position:relative;
+  z-index:2000;
+  display:table;
+  margin:0 auto;
+  text-align:left;
+  border: 5px solid #f1f1f1;
+  padding: 2rem;
+  @include transition(all .2s ease);
+  cursor:default;
+  background-color:rgba(0,0,0,.73);
+    h5 {
+      margin: -2rem -2rem 2rem -2rem;
+      padding:1rem;
+      text-align:center;
+      border-bottom:5px solid #f1f1f1;
+      font-weight:300;
+    }
+    span {font-size:0.7em;}
+    &:hover {
+      background:rgba(255,0,255,0.4);
+      color:#fff;
+    }
+}
+
+// Individual Elements
+//----------------
+
+.imgTrix {
+  margin-bottom:8rem;
+  img {
+  @include opacity(.55);
+  position:relative;
+  max-width:110px;
+  height:110px;
+  z-index:1100;
+  &:nth-child(odd) {
+    z-index:1200;
+  }
+  }
+  .bs {
+    @include opacity(1);
+    max-width:200px;
+    height:200px;
+    z-index:1300;
+  }
+  .mr {
+    margin-right:-45px;
+  }
+  .ml {
+    margin-left:-45px;
+  }
+}
+
+.borderCol {
+  border:1px solid #333;
+  min-height:16px;
+  cursor:default;
+    &.more {
+      min-height:24px;
+      border-color:#444;
+      cursor:default;
+    }
+    &.moreMore {
+      border-width:2px;
+      min-height:40px;
+      border-color:#eee;
+      cursor:default;
+      background-color:rgba(0,0,0,.73);
+      @include transition(all .2s ease);
+        &:hover {
+          background:rgba(255,0,255,0.4);
+          color:#fff;
+        }
+        p {
+          padding-top:5rem;
+          font-weight:400;
+        }
+    }
+}
+
+#intro {
+@include opacity(0);
+@include transition(opacity 1.4s ease);
+  &.showMe {
+    @include opacity(1);
+  }
+  
+}
+
+p {
+  position:relative;
+z-index:2000;
+}
+
+#intro2, #use, #realLife, #bye {
+  p {
+    padding:1rem;
+    background-color:rgba(0,0,0,.75);
+    @include border-radius(1rem);
+  }
+  p.title {
+    @include border-radius(0);
+  }
+  .tilt-list {
+    display:inline-block;
+  }
+}
+
+#use {
+  .tilt-list {
+    margin-left:7.5%;
+  }
+}
+
+.emoGirl, .stylishGuy {
+  position:fixed;
+  bottom:0;
+  left:1rem;
+  display:none;
+}
+.stylishGuy {
+  left:auto;
+  right:1rem;
+  z-index:1000;
+}
+
+//Landing
+#landing {
+  cursor:pointer;
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  z-index:1800;
+  position:fixed;
+  top:0;
+  left:0;
+  background-color:rgba(0,0,0,.84);
+    .contain {
+      position:fixed;
+      top:50%;
+      left:50%;
+    }
+    img, .arrow {
+      width:704px;
+      height:204px;
+      display:block;
+      float:left;
+      margin-top:-102px;
+      margin-left:-350px;
+    }
+    .arrow {
+      font-size:13rem;
+      color:#eee;
+    }
+}
+@-webkit-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@-moz-keyframes blink {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+.arrow {
+-webkit-transition: all 4s ease-in-out;
+    -moz-transition: all 4s ease-in-out;
+    -o-transition: all 4s ease-in-out;
+    -ms-transition: all 4s ease-in-out;
+    transition: all 4s ease-in-out;
+    
+    -webkit-animation-direction: normal;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: blink;
+    -webkit-animation-timing-function: ease-in-out;
+    
+-moz-animation-direction: normal;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-name: blink;
+    -moz-animation-timing-function: ease-in-out;    
+}
+
+// Forms
+//----------------
+.form-master {
+	padding-bottom:10rem;
+		h2, h5 {text-align:center;}
+		h5 {border-bottom:1px solid #222;}
+		.title {margin-bottom:3rem;}
+		.section {
+			margin-bottom:3rem;
+			border:1px solid #111;
+			padding:2rem;
+			background-color:rgba(0,0,0,0.8);
+		}
+		input {
+			@include transition(all 0.4s ease);
+			width:100%;
+			background:none;
+			background-color:transparent;
+			outline:none;
+			select:none;
+			border:1px solid #f3f3f3;
+			padding:1rem;
+			font-size:1em;
+		}
+		 input:hover, textarea:hover {
+			background-color:rgba(255,255,255, 0.1);
+		}
+		input:focus, textarea:focus {
+			background-color:rgba(0,190,0, 0.2);
+		}
+		label {display:block;}
+		.item {
+			margin-top:1.2rem;
+		}
+		textarea {
+			@include transition(all 0.6s ease);
+			width:100%;
+			display:table;
+			margin:0 auto;
+			min-height:150px;
+			background-color:rgba(255,255,255,0.05);
+			outline:0;
+		}
+		input[type=submit] {
+			border: 1px solid transparent;
+			background-color:rgba(255,255,255,0.8);
+			color:#000;
+			padding:2rem 0;
+			font-size:2em;
+			font-weight:300;
+		}
+		input[type=submit]:hover, input[type=submit]:active {
+			background-color:rgba(0,0,0,0.8);
+			color:#f3f3f3;
+		}
+		.fa-check {color:#00aa00;}
+		.fa-close {color:#aa0000;}
+}
+
+// ---------------------------++
+//  Peter Styles
+// ---------------------------++
+
+
+
+// Grab Media Queries
+//----------------
+@import 'libcustom';
+@import 'responsive';

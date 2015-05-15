@@ -1,0 +1,158 @@
+/* rules.scss */
+
+/* Mixins */
+@mixin opacity($opacity) {
+	-moz-opacity: $opacity;
+	-khtml-opacity: $opacity;
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$opacity-ie);
+}
+@mixin border-radius($border-radius) {
+	-webkit-border-radius: $border-radius;
+	-moz-border-radius: $border-radius;
+	border-radius: $border-radius;
+}
+@mixin border-bottom-radius($border-bottom-radius) {
+	-webkit-border-bottom-right-radius: $border-bottom-radius;
+	-webkit-border-bottom-left-radius: $border-bottom-radius;
+	-moz-border-radius-bottomright: $border-bottom-radius;
+	-moz-border-radius-bottomleft: $border-bottom-radius;
+	border-bottom-right-radius: $border-bottom-radius;
+	border-bottom-left-radius: $border-bottom-radius;
+}
+@mixin border-top-radius($border-top-radius) {
+	-webkit-border-top-left-radius: $border-top-radius;
+	-webkit-border-top-right-radius: $border-top-radius;
+	-moz-border-radius-topleft: $border-top-radius;
+	-moz-border-radius-topright: $border-top-radius;
+	border-top-left-radius: $border-top-radius;
+	border-top-right-radius: $border-top-radius;
+}
+@mixin border-left-radius($border-left-radius) {
+	-webkit-border-top-left-radius: $border-left-radius;
+	-webkit-border-bottom-left-radius: $border-left-radius;
+	-moz-border-radius-topleft: $border-left-radius;
+	-moz-border-radius-bottomleft: $border-left-radius;
+	border-top-left-radius: $border-left-radius;
+	border-bottom-left-radius: $border-left-radius;
+}
+@mixin border-right-radius($border-right-radius) {
+	-webkit-border-top-right-radius: $border-right-radius;
+	-webkit-border-bottom-right-radius: $border-right-radius;
+	-moz-border-radius-topright: $border-right-radius;
+	-moz-border-radius-bottomright: $border-right-radius;
+	border-top-right-radius: $border-right-radius;
+	border-bottom-right-radius: $border-right-radius;
+}
+@mixin translate($x,$y) {
+	-moz-transform: translate($x,$y);
+	-o-transform: translate($x,$y);
+	-ms-transform: translate($x,$y);
+	-webkit-transform: translate($x,$y);
+	transform: translate($x,$y);
+}
+@mixin rotate($x) {
+	-moz-transform: rotate($x);
+	-o-transform: rotate($x);
+	-ms-transform: rotate($x);
+	-webkit-transform: rotate($x);
+	transform: rotate($x);
+}
+@mixin transition($transition) {
+	-webkit-transition:$transition;
+	-moz-transition:$transition;
+	-o-transition:$transition;
+	transition:$transition;
+}
+@mixin box-shadow ($box-shadow) {
+	-webkit-box-shadow: $box-shadow;
+	-moz-box-shadow: $box-shadow;
+	box-shadow: $box-shadow;
+}
+@mixin background-size ($background-size) {
+	-webkit-background-size: $background-size;
+	-moz-background-size: $background-size;
+	-o-background-size: $background-size;
+	background-size: $background-size;
+}
+
+/* Fonts */
+//Imports
+//@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400);
+@font-face {
+font-family: Roboto url('../fonts/Roboto-Thin.ttf') format('truetype');
+font-weight:100;
+}
+@font-face {
+font-family: Roboto url('../fonts/Roboto-Light.ttf') format('truetype');
+font-weight:200;
+}
+@font-face {
+font-family: Roboto url('../fonts/Roboto-Regular.ttf') format('truetype');
+font-weight:300;
+}@font-face {
+font-family: Roboto url('../fonts/Roboto-Black.ttf') format('truetype');
+font-weight:400;
+}
+
+//Variables
+$title-font: 'Roboto', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$body-font: 'Roboto', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$console-font: monaco,Consolas,Lucida Console,monospace;
+$fallback-font: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$code: Consolas, monaco, monospace;
+//CSS Classes
+.font-title {font-family: $title-font;}
+.font-body {font-family: $body-font;}
+.font-fallback {font-family: $fallback-font;}
+//Responsive Setup  - Flowtype
+body {font-size:18px;}
+h1,h2,h3,h4,h5,h6 {line-height: 1.2;}
+h1 {font-size:4em;} h2 {font-size:3em;} h3 {font-size:2.5em;}
+h4 {font-size:2em;} h5 {font-size:1.5em;} h6 {font-size:1em;}
+
+
+/* Colors */
+$font: #f3f3f3;
+$green: #33ee33;
+$red: #ee3333;
+$yellow: #eeee33;
+$pink: #ee33ee;
+
+/* Color Classes */
+.textGreen {color:$green;}
+.textRed {color:$red;}
+.textYellow {color:$yellow;}
+.textPink {color:$pink;}
+
+/* Globals */
+ul, ol, menu, dir, h1,h2,h3,h4,h5,h6 {-webkit-margin-before: 0; -webkit-margin-after: 0; -webkit-margin-start: 0; -webkit-margin-end: 0; -webkit-padding-start: 0; padding:0;}
+ul {list-style-type:none;}
+h1,h2,h3,h4,h5,h6 {margin:0; padding:0; font-family:$title-font; font-weight:100;}
+p {padding:0; margin:0 0 1.5rem 0; font-size:1.2em;}
+a, span {font-family:inherit; color:inherit;}
+a, a:link, a:visited, a:hover, a:active {color:inherit; text-decoration:none; outline:0; font-weight:100;}
+body {font-family:$body-font; color:$font; background-color:transparent; font-weight:200;}
+html, body {width:100%; height:100%;}
+
+/* Layout */
+
+
+/* Addon Classes */
+.no-lr {padding-left:0; padding-right:0;}
+.no-pad {padding-left:0; padding-right:0; margin-left:0; margin-right:0;}
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.textCenter {text-align:center;}
+.textRight {text-align:right;}
+.textLeft {text-align:left;}
+
+/* Imports */
+//@import 'more';
