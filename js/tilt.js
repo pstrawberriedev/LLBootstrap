@@ -138,14 +138,30 @@ $('.tilt-bottom a').each(function() {
             } else {
               $('.emoGirl').fadeOut();
             }
-            // /Emo Girl
             // Stylish Guy
             if($(this).hasClass('stylishGuyLink')) {
               $('.stylishGuy').slideDown();
             } else {
               $('.stylishGuy').fadeOut();
             }
-            // /StylishGuy
+			// Fish
+            if($(this).hasClass('fishLink')) {
+              $('.fish').slideDown();
+            } else {
+              $('.fish').fadeOut();
+            }
+			// Saturns
+            if($(this).hasClass('saturnLink')) {
+              $('.saturns').slideDown();
+            } else {
+              $('.saturns').fadeOut();
+            }
+			// Pony
+            if($(this).hasClass('ponyLink')) {
+              $('.pony').slideDown();
+            } else {
+              $('.pony').fadeOut();
+            }
             shift.removeClass('open');
             TweenLite.to(shift, 0.09, { onComplete:start})
             function start() {

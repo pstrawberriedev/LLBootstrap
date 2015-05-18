@@ -441,7 +441,7 @@ p {
 #use .tilt-list {
   margin-left: 7.5%; }
 
-.emoGirl, .stylishGuy {
+.emoGirl, .stylishGuy, .fish, .saturns, .pony {
   position: fixed;
   bottom: 0;
   left: 1rem;
@@ -451,6 +451,18 @@ p {
   left: auto;
   right: 1rem;
   z-index: 1000; }
+
+.fish, .saturns, .pony {
+  left: 0;
+  right: 0;
+  bottom: 1rem; }
+
+.saturns {
+  bottom: 40rem; }
+  .saturns img {
+    width: 32px;
+    height: 42px;
+    margin-right: 5px; }
 
 #landing {
   cursor: pointer;
